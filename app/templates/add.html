@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Agregar nueva maquina{% endblock %}
+{% block formContent %}
+<div class="contenedor">
+    <form action="" method="post">
+        {{form.csrf_token()}}
+        <div>
+            {{form.name(placeholder='Nombre de la maquina')}}
+        </div>
+        <div>
+            {{form.ip(placeholder='IP de la maquina')}}
+        </div>
+        <div>
+            {{form.description(placeholder='Descrición de la maquina')}}
+        </div>
+        <div>
+            {{form.submit(value='Registrar')}}
+        </div>
+    </form>
+</div>
+{% endblock %}

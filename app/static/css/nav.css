@@ -1,0 +1,18 @@
+/* ====== Estilos para el nav ======== */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+nav a {
+    margin-right: 1rem;
+    padding: .5rem;
+    color: var(--white);
+    opacity: .9;
+    background-color: var(--btn1);
+    border-radius: .2rem;
+}
+nav a:last-of-type {
+    margin: 0;
+}

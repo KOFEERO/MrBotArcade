@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    
+</head>
+<body>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <form action="" method="post">
+        {{form.csrf_token()}}
+        <h2>Iniciar Sesion</h2>
+        <div>
+            {{form.username(placeholder='Usuario')}}
+        </div>
+        <br>
+       <div>    
+        {{form.password(placeholder='Password')}}
+       </div>
+       <br>
+        {{form.submit(value='Iniciar')}}
+    </form>
+</body>
+</html>

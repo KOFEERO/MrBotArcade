@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %} Agregar tiempo las Maquinas {% endblock %}
+
+{% block formContent %}
+
+   
+<div class="contenedor">
+    <h1>Agregar tiempo</h1>
+    <form action="" class="form" method="post">
+        <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+        <div class="campo-form">
+            <select name="machine" id="machine">
+                <option value="" selected disabled>Selecione una maquina</option>
+                {% for machine in data.machines %}
+                    {% if machine.ip in data.list_machines %}
+                        <option value="{{machine.id}}">{{machine.name}}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+            <div class="icon__select">
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+        </div>
+
+        <div class="campo-form">
+            {{form.description(placeholder="Descrición")}}
+        </div>
+
+        <div class="campo-form">
+           {{form.hour(placeholder='Hora', value="0")}}
+        </div>
+
+        <div class="campo-form">
+            {{form.minute(placeholder='Minutos')}}
+         </div>
+
+        <div class="campo-form">
+            {{form.submit(class="btn_submit", value="Agregar tiempo")}}
+        </div>
+    </form>
+</div>
+{% endblock %}

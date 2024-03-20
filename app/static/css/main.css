@@ -1,0 +1,85 @@
+/*================== (ESTILOS PARA LOS FORMULARIOS DE AGREGAR Y QUITAR TIEMPO) ==================*/
+main .contenedor h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--bg-header);
+    text-align: center;
+    margin-top: .6rem;
+}
+.form {
+    width: 90%;
+    margin: auto;
+}
+@media (min-width: 768px) {
+    .form {
+        width: 50%;
+    }
+}
+.campo-form {
+    width: 100%;
+    margin-bottom: 1rem;
+    position: relative;
+}
+.campo-form select {
+    border: solid 2px var(--blue);
+    border-radius: .2rem;
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    padding: .8rem;
+    color: var(--blue);
+    -moz-appearance: none; 
+    text-indent: 0.01px; 
+    text-overflow: ''; 
+    outline: none;
+}
+
+.icon__select {
+    position: absolute;
+    top: 13px;
+    right: 10px;
+    font-size: 1rem;
+    color: var(--blue);
+    transition: .3s ease-in-out;
+}
+.icon__select.active {
+    transform: rotate(90deg);
+}
+.campo-form input {
+    display: block;
+    width: 100%;
+    border: solid 2px var(--blue);
+    color: var(--black);
+    padding: .5rem 1rem;
+    border-radius: .8rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+    background: var(--bg-body);
+}
+.campo-form input:focus {
+    outline: solid 1px var(--blue);
+}
+.campo-form input.btn_submit {
+    background: var(--blue);
+    color: var(--white);
+}
+.campo-form input:hover {
+    opacity: .9;
+}
+
+.campo-form textarea {
+    font-family: var(--fuenteMain);
+    border: solid 2px var(--blue);
+    border-radius: .8rem;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 4rem;
+    background: var(--bg-body);
+    padding: .5rem 1rem;
+}
+.campo-form textarea:focus {
+    outline: solid 1px var(--blue);
+}
