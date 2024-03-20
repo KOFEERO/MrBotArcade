@@ -1,4 +1,4 @@
-./migrations
-./env
-./__pycache__/
-./app/__pycache__/
+migrations/
+env/
+__pycache__/
+app/__pycache__/
