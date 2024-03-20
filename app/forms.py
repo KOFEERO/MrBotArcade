@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms.validators import DataRequired, Length, Optional
-from wtforms import StringField, SubmitField, IntegerField, SelectField, TextAreaField
+from wtforms import StringField, SubmitField, IntegerField, SelectField, TextAreaField, DecimalField
 
 
 ################ (FORMULARIO MAQUINAS) ################
@@ -14,7 +14,7 @@ class TimeForm(FlaskForm):
     description = TextAreaField('Descripcion', validators=[Optional()])
     hour = StringField('Hour', validators=[DataRequired(), Length(min=1, max=1)])
     minute = StringField('Minute', validators=[DataRequired(), Length(min=1, max=1)])
-    price_time = IntegerField('Price time', validators=[DataRequired()])
+    price_time = DecimalField('Price time', validators=[DataRequired()])
     submit = SubmitField()
 
 

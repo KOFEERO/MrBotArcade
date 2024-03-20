@@ -35,7 +35,6 @@ def add_machines():
 def add_time():
     form = TimeForm()
     machines = Arcade.query.with_entities(Arcade.id, Arcade.name, Arcade.ip).all()
-    print(machines)
     machines_on = veryfi_ping_machine(machines)
     
     data = {
@@ -50,7 +49,7 @@ def add_time():
             
             if machine_db:
             # guardamos la hora y minuto en una lista
-                datos = [request.form['horas'], request.form['minutos']]
+                datos = [form.hour.data, form.minute.data]
 
                 # Instanciamos la la clase para enviar los datos a la maquina y dar tiempo
                 control = ControlMachines(machine_db.ip, datos)
@@ -68,7 +67,7 @@ def add_time():
                         flash(f'Error, {machine_db.name} rechazo la conexion')
                         return redirect(url_for("page.add_time"))
                     elif control.add_time_machine():
-                        credit_machine = Time(request.form['horas'], request.form['minutos'], price_time=200, machine_id=machine_db.id)
+                        credit_machine = Time(employee_id=1, hour=form.hour.data, minute=form.minute.data, price=form.price_time.data, machine_id=machine_db.id, description=form.description.data)
                         db.session.add(credit_machine)
                         db.session.commit()
                         flash(f'Se agrego tiempo a la maquina correctamente: {machine_db.name}', 'success')
